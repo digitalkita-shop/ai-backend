@@ -8,7 +8,18 @@ const port = process.env.PORT || 3000;
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 
-app.use(cors());
+const corsOptions = {
+  origin: [
+    "https://ai.google.dev",
+    "https://makersuite.google.com",
+    "https://aistudio.google.com"
+    // tambahkan domain frontend lain jika ada, misalnya Vercel
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 app.post("/api/save", async (req, res) => {
