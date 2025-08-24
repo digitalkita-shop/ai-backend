@@ -17,6 +17,8 @@ console.log("🌐 Allowed origins:", [
   "https://ai.google.dev",
   "https://makersuite.google.com",
   "https://aistudio.google.com"
+  "https://digitalkita-prompt-engineer-556526195905.us-west1.run.app/"
+
 ]);
 
 const corsOptions = {
